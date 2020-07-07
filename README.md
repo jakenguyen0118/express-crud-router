@@ -106,7 +106,7 @@ express-api/package.json
 }
 ```
 
-1. Create a .gitignore file `touch .gitignore`!
+9. Create a .gitignore file `touch .gitignore`!
 
 ```sh
 echo "
@@ -116,7 +116,7 @@ echo "
 ```
 
 
-8.  start the app with `nodemon` and make sure it is working
+10.  start the app with `nodemon` and make sure it is working
 
 
 ## Lets build our Fruits app!
