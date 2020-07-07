@@ -5,7 +5,7 @@
 1. Create a Delete Route
 1. Test Delete route with Postman
 1. Create an update route
-1. Test Edit rou
+1. Test Edit route
 
 <hr>
 
