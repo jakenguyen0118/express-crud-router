@@ -18,7 +18,7 @@ router.post('/', (req, res)=>{
 
 ## Define middleware
 
-We can have a function execute for all routes:
+We can have a function execute for all routes but this time we include an additional argument: `next`.  `next()` is essentially a callback function built into express that is called once the middleware has completed.  This provides us the opportunity to perform some action on either the `req` or `res` objects and then pass the results to the next middleware. 
 
 ```javascript
 app.use((req, res, next) => {
