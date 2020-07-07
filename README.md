@@ -1,4 +1,4 @@
-# Intro to REST
+# Intro to CRUD & REST
 
 ## Lesson Objectives
 
