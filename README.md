@@ -95,7 +95,6 @@ Delete does just as the name implies, it `DELETE`'s something from our data sour
 1. install dotenv
 1. create a `.env` file
 1. require express and set up a basic server that logs listening when you start the app
-
 1. Let's add a new `dev` config to our scripts section in our package.json
 
 express-api/package.json
