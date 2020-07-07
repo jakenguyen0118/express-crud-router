@@ -5,7 +5,7 @@
 1. Describe what `CRUD` is
 1. Describe REST and list the various routes
 1. Create an Index route
-1. Install JSONView to make viewing JSON easier
+1. Install JSON View to make viewing JSON easier
 1. Create a Show route
 1. Enhance the data in your data array
 
@@ -21,7 +21,7 @@
 
 CRUD stands for **C**`reate`, **R**`ead`, **U**`pdate` and **D**`elete`. Why and how is this important you ask? Well CRUD is in everything you interact with online on a daily basis. Browsing Instagram and looking at posts? Thats **R**`ead`. Are you posting something? Well that's **C**`reate`. Didn't like that picture you posted? **D**`elete` to the rescue and finally, liking pictures of adorable animals? Hello **U**`date`!
 
-So now that we have a reference point, how does that relate to Code?
+So now that we have a reference point, how does that relate to code?
 
 Below you'll find a table that relates normal `HTTP` actions to our CRUD operators.
 
@@ -58,6 +58,9 @@ Update or `PUT` works very similar to a `POST` request. We are still sending alo
 
 Delete does just as the name implies, it `DELETE`'s something from our data source. We target the specific piece of information in the same way we did with our `PUT` request. This sends a request to the server to `DELETE` this item.
 
+<br>
+<hr>
+
 ## Describe REST and list the various routes
 
 - REST stands for Representational state transfer
@@ -74,17 +77,26 @@ Delete does just as the name implies, it `DELETE`'s something from our data sour
 | /photos/:id      | PATCH/PUT | update    
 | /photos/:id      | DELETE    | destroy  
 
+
+**note** We will not map our crud functionality directly to REST. These are just some common and conventional rest endpoints we will use to create our routes.
+
+
+<br>
+<hr>
+
 ## Create an Index route
 
 ## Setup our app
 
 1.  Create a directory in student examples called `fruits` (you will be using this folder over the next few days)
-2. `touch server.js`
-3.  `npm init -y`
-4.  install express
-5.  require express and set up a basic server that logs listening when you start the app
+1. `touch server.js`
+1. `npm init -y`
+1. install express
+1. install dotenv
+1. create a `.env` file
+1. require express and set up a basic server that logs listening when you start the app
 
-6. Let's add a new `dev` config to our scripts section in our package.json
+1. Let's add a new `dev` config to our scripts section in our package.json
 
 express-api/package.json
 ```js
@@ -95,7 +107,7 @@ express-api/package.json
 }
 ```
 
-7. Create a .gitignore file `touch .gitignore`!
+1. Create a .gitignore file `touch .gitignore`!
 
 ```sh
 echo "
@@ -103,6 +115,7 @@ echo "
 .DS_Store
 .env" >> .gitignore
 ```
+
 
 8.  start the app with `nodemon` and make sure it is working
 
@@ -112,6 +125,7 @@ echo "
 Let's have a set of resources which is just a javascript array.  To create an index route, we'd do the following:
 
 ```javascript
+require('dotenv').config
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -145,6 +159,7 @@ Install it:
 To create a show route, we'd do this:
 
 ```javascript
+require('dotenv').config
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -174,6 +189,7 @@ Now go to http://localhost:3000/fruits/1
 - Let's enhance our data a bit:
 
 ```javascript
+require('dotenv').config
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;

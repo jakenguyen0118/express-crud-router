@@ -27,15 +27,15 @@
 Inside our server.js file, add a `DELETE` route:
 
 ```js
-app.delete('', (req, res) => {
+router.delete('', (req, res) => {
 	
 });
 ```
 
 ```javascript
-app.delete('/fruits/:indexOfFruitsArray', (req, res) => {
+router.delete('/:indexOfFruitsArray', (req, res) => {
 	fruits.splice(req.params.indexOfFruitsArray, 1); //remove the item from the array
-	res.redirect('/fruits');  //redirect back to index route
+	res.send('deleted');  
 });
 ```
 
@@ -46,13 +46,14 @@ app.delete('/fruits/:indexOfFruitsArray', (req, res) => {
 
 <hr>
 <br>
-### Create an update route
+
+### :right_anger_bubble: Create an update route
 
 In order to UPDATE, we use the http verb `PUT`.
 
 
 ```js
-app.put('', (req, res) => {
+router.put('', (req, res) => {
 	
 });
 ```
@@ -61,15 +62,12 @@ app.put('', (req, res) => {
 Inside server.js add the following:
 
 ```javascript
-app.put('/fruits/:indexOfFruitsArray', (req, res) => { //:indexOfFruitsArray is the index of our fruits array that we want to change
-    if(req.body.readyToEat === 'on'){ //if checked, req.body.readyToEat is set to 'on'
-        req.body.readyToEat = true;
-    } else { //if not checked, req.body.readyToEat is undefined
-        req.body.readyToEat = false;
-    }
-	fruits[req.params.indexOfFruitsArray] = req.body; //in our fruits array, find the index that is specified in the url (:indexOfFruitsArray).  Set that element to the value of req.body (the input data)
-	res.redirect('/fruits'); //redirect to the index page
+
+router.put('/:indexOfFruitsArray', (req, res) => { //:indexOfFruitsArray is the index of our fruits array that we want to change
+    fruits[req.params.indexOfFruitsArray] = req.body; //in our fruits array, find the index that is specified in the url (:indexOfFruitsArray).  Set that element to the value of req.body (the input data)
+    res.send(fruits[req.params.indexOfFruitsArray]);
 });
+
 ```
 
 <hr>

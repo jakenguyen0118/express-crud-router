@@ -40,25 +40,12 @@ rename `app` to `router`
 const express = require('express');
 const router = express.Router();
 
-
-router.post('/fruits/', (req, res)=>{
-   
+router.get('/fruits/', (req, res) => {
+    res.send(fruits);
 });
 
-router.get('/fruits', (req, res)=>{
-    
-});
-
-router.get('/fruits/:id', (req, res)=>{
-    
-});
-
-router.delete('/fruits/:id', (req, res)=>{
- 
-});
-
-router.put('/fruits/:id', (req, res)=>{
-  
+router.get('/fruits/:indexOfFruitsArray', (req, res) => {
+    res.send(fruits[req.params.indexOfFruitsArray]);
 });
 
 module.exports = router;
@@ -69,13 +56,14 @@ module.exports = router;
 ```javascript
 const express = require('express');
 const router = express.Router();
-const Fruit = require('../models/fruits.js')
+const fruits = require('../models/fruits.js')
 //...
 ```
 
 The `Fruit` model is no longer needed in `server.js`.  Remove it:
 
 ```javascript
+require('dotenv').config
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -95,31 +83,16 @@ Since we've specified that the controller works with all urls starting with /fru
 ```javascript
 const express = require('express');
 const router = express.Router();
+const fruits = require('../models/fruits.js');
 
-
-router.post('/', (req, res)=>{
- 
+router.get('/', (req, res) => {
+    res.send(fruits);
 });
 
-router.get('/', (req, res)=>{
-   
+router.get('/:indexOfFruitsArray', (req, res) => {
+    res.send(fruits[req.params.indexOfFruitsArray]);
 });
 
-router.get('/:id', (req, res)=>{
-    
-});
-
-router.delete('/:id', (req, res)=>{
-   
-});
-
-router.get('/:id/edit', (req, res)=>{
-  
-});
-
-router.put('/:id', (req, res)=>{
-   
-});
 
 module.exports = router;
 ```
@@ -128,4 +101,3 @@ module.exports = router;
 ## Why use router?
 - Our app is very simple right now.
 - What if we want to add a vegetables index route, create, read update and delete?
-- Lets take a look!

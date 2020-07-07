@@ -1,10 +1,13 @@
 # MVC
 
+<img src="https://miro.medium.com/max/1276/1*fdmEnFOCH8oDVo8mlQG2jg.jpeg">
+
+Model / View / Controller
+
 ## Lesson Objectives
 
 1. Define MVC and explain why it matters
 1. Move our data into a separate file
-1. Move our presentation code into an JSX file
 
 ## Define MVC and explain why it matters
 
@@ -13,14 +16,16 @@
     - we have data, app instantiation (listening), and routes all in one file
 - One way to keep an app from getting messy is to separate it out into three sections
 
-```js
-    - Models
-        - data (javascript variables)
-    - Views
-        - how the data is displayed to the user (HTML)
-    - Controllers
-        - the glue that connects the models with the views
-```
+<br>
+
+### Models
+    data (javascript variables, our fruits array)
+### Views
+    how the data is displayed to the user (HTML, JSX etc)
+### Controllers
+    the glue that connects the models with the views
+
+<br>
 
 There are a few good reasons why we may want to do this: 
 
@@ -34,18 +39,21 @@ There are a few good reasons why we may want to do this:
 
 
 <hr>
-<img src="https://miro.medium.com/max/1276/1*fdmEnFOCH8oDVo8mlQG2jg.jpeg">
 
 ## Think of MVC as a restaurant
-    - Models are the cook
-        - prepares food/data
-    - Views are the customer
-        - consumes food/data
-    - Controllers are the waiter
-        - brings food from cook to customer
-        - has no idea how food/data is prepared
-        - has no idea how the food/data is consumed
 
+<img src="https://www.guru99.com/images/1/122118_0445_MVCTutorial2.png" width="300px">
+
+Models are the cook
+- prepares food/data
+
+Views are the customer
+- consumes food/data
+
+Controllers are the waiter
+- brings food from cook to customer
+- has no idea how food/data is prepared
+- has no idea how the food/data is consumed
 
 <hr> 
 
@@ -96,3 +104,6 @@ There are a few good reasons why we may want to do this:
 
 (we will be using React as our view!)
 
+## Controller
+
+[Lets check out this Contoller/Router Markdown](CONTROLLER_ROUTER.md)
