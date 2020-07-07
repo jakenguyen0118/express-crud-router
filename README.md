@@ -140,18 +140,6 @@ app.listen(port, () => {
 });
 ```
 
-Now go to http://localhost:3000/fruits/
-
-## Install JSON Formatter to make viewing JSON easier
-
-- JSON stands for Javascript Object Notation
-- It's just a way to represent data that looks like a Javascript object or array
-- JSON Formatter extension just makes it easier to view JSON data.
-
-Install it:
-
-1.  Go to https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa
-1. Click on "Add To Chrome"
 
 ## Create a Show route
 
