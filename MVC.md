@@ -90,7 +90,7 @@ Controllers are the waiter
     ```
 
 1. But, we could have multiple variables in our /models/fruits.js file.
-    - How does javascript know which variable in /models/fruits.js to assign to the fruits const in server.js (the result of the `require()` statment)?
+    - How does javascript know which variable in /models/fruits.js to assign to the fruits const in server.js (the result of the `require()` statement)?
     - We must tell javascript which variable we want to be the result of the `require()` statement in server.js
 
         ```javascript
