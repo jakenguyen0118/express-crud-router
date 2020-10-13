@@ -5,45 +5,36 @@ require('dotenv').config()
 const express = require('express')
 // import morgan
 const logger = require('morgan')
+// import fruits "model"
+// const fruits = require('./models/fruits')
 // instantiate a new instance of express
+
 const app = express()
 const PORT = process.env.PORT || 3000
 
-
-const fruits = [
-    {
-        name:'apple',
-        color: 'red',
-        readyToEat: true
-    },
-    {
-        name:'pear',
-        color: 'green',
-        readyToEat: false
-    },
-    {
-        name:'banana',
-        color: 'yellow',
-        readyToEat: true
-    }
-]
-
-app.get('/fruits', (req,res) => {
-    res.json({
-        status: 200,
-        fruits: fruits
-    })
-})
+// example of self-created middleware
+// app.use((req, res, next) => {
+//     console.log('im joes super duper middleware')
+//     req.params.index = 100
+//     console.log(req.params.index)
+//     next()
+// })
 
 app.use(logger('dev'))
+// x-www.form-urlencoded
+app.use(express.urlencoded({extended:false}))
+// accepts raw json
+app.use(express.json())
 
-//add show route / GET route /fruits/:id
-app.get('/fruits/:index', (req, res) => {
+app.get('/', (req, res) => {
     res.json({
         status: 200,
-        fruit: fruits[req.params.index]
+        msg: 'hi'
     })
 })
+
+const fruitsController = require('./controllers/fruits')
+app.use('/fruits', fruitsController)
 
 app.listen(PORT, () => {
 	console.log(`express listening on port ${PORT}`)
