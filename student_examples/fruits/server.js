@@ -3,6 +3,8 @@
 require('dotenv').config()
 // import express
 const express = require('express')
+// import morgan
+const logger = require('morgan')
 // instantiate a new instance of express
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -33,9 +35,14 @@ app.get('/fruits', (req,res) => {
     })
 })
 
-//add show route
-app.get('/fruits/:indexOfFruitsArray', (req, res) => {
-    res.send(fruits[req.params.indexOfFruitsArray])
+app.use(logger('dev'))
+
+//add show route / GET route /fruits/:id
+app.get('/fruits/:index', (req, res) => {
+    res.json({
+        status: 200,
+        fruit: fruits[req.params.index]
+    })
 })
 
 app.listen(PORT, () => {
