@@ -33,5 +33,26 @@ router.post('/', (req, res) => {
     })
 })
 
+// delete - remove a single thing
+router.delete('/:index', (req, res) => {
+    // .splice(starting position, how many)
+    // .splice mutates the original array
+    fruits.splice(req.params.index, 1)
+    res.json({
+        status: 200,
+        msg: 'item removed'
+    })
+})
+
+// put - update a single thing
+router.put('/:index', (req, res) => {
+    fruits[req.params.index] = req.body
+    res.json({
+        status: 200,
+        msg: 'item updated',
+        fruit: fruits[req.params.index]
+    })
+})
+
 // export router
 module.exports = router
